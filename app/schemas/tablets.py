@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, root_validator
 from typing import List
 
 class BaseConfig:
@@ -14,12 +14,16 @@ class TabletBase(BaseModel):
     
     class Config(BaseConfig):
         pass
+    
         
 class TabletCreate(BaseModel):
     
     name : str
     description : str
     price : float
+    link : str
+    
+    
     
     class Config(BaseConfig):
         pass
@@ -38,7 +42,14 @@ class TabletGet(BaseModel):
 class TabletsGet(BaseModel):
     
     message : str
-    data = List[TabletBase]
+    data : List[TabletBase]
     
     class Config(BaseConfig):
         pass
+    
+class TabletDelete(TabletBase):
+    pass
+
+class TabletDeletedGet(BaseModel):
+    message : str
+    data : TabletDelete
