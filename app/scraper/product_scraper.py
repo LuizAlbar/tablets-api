@@ -13,6 +13,8 @@ def get_tablets_row_path(soup):
 def get_price(div):
     
     price = div.find('span', attrs = {'itemprop' : 'price'}).text.strip()
+    price = price.replace("$", "")
+    price = float(price)
     return price
 
 def get_link(div):
@@ -36,21 +38,16 @@ def get_product(div):
     link = get_link(div)
     name = get_name(div)
     description = get_description(div)
-    product = (name, description, price, link)
+    product = {"name" : name, "description" : description, "price": price, "link": link}
     return product
     
     
-divs = get_tablets_row_path(soup)
+listOfTablets = get_tablets_row_path(soup)
 
 
-div = divs[0]
+tablet = get_product(listOfTablets[0])
 
 
-tablet = get_product(div)
-
-print(tablet)
-print(type(tablet))
-    
     
 
 

@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base
+from app.crud.tablets import TabletCrud
 from sqlalchemy.orm import sessionmaker
 from app.core.settings import settings
 from app.models.tablet import Tablet
@@ -18,4 +18,22 @@ def get_db():
         db.close()
         
         
-get_db()
+def create_item(tablet):
+    db_generator = get_db()
+    db = next(db_generator)
+    
+    try:
+        TabletCrud.create_tablet(db, tablet)
+    finally:
+        db.close()
+        
+def delete_item(id):
+    db_generator = get_db()
+    db = next(db_generator)
+    
+    try:
+        TabletCrud.delete_tablet(db, id)
+        
+    finally:
+        db.close()
+    
