@@ -2,7 +2,7 @@
    -beautifulsoup4 
    -requests
 
-2. Armazenar os Dados (Banco de Dados):
+2. Armazenar os Dados(Banco de Dados):
    -sqlalchemy
 
 3. Criar uma API (FastAPI ou Flask):
