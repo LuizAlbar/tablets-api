@@ -42,7 +42,7 @@ class TabletGet(BaseModel):
 class TabletsGet(BaseModel):
     
     message : str
-    data : List[TabletBase]
+    data : List[TabletBase] = []
     
     class Config(BaseConfig):
         pass

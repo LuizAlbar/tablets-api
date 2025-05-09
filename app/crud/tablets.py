@@ -56,5 +56,7 @@ class TabletCrud:
         
         return ResponseHandler.delete_success(db_tablet.name, db_tablet.id, db_tablet)
     
+    
+    
             
         

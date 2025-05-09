@@ -19,8 +19,11 @@ def get_price(div):
 
 def get_link(div):
     
+    url = 'https://webscraper.io'
     link = div.find('a', class_='title')
-    return link['href']
+    url = url + link['href']
+    return url
+
 
 def get_name(div):
     
@@ -46,6 +49,8 @@ listOfTablets = get_tablets_row_path(soup)
 
 
 tablet = get_product(listOfTablets[0])
+
+print(tablet)
 
 
     

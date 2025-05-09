@@ -1,17 +1,11 @@
-1. Web Scraping:
-   -beautifulsoup4 
-   -requests
+-beautifulsoup4 
+-requests
+-sqlalchemy
+-fastapi 
+-uvicorn
+-pydantic
+-pydantic_settings
+-fastapi.testclient
+-httpx
 
-2. Armazenar os Dados(Banco de Dados):
-   -sqlalchemy
-
-3. Criar uma API (FastAPI ou Flask):
-   -fastapi 
-   -uvicorn
-
-4. Esperado:
-   -Tratar com HTTPException
-
-5. Criar testes unitários para API:
-   -fastapi.testclient
 

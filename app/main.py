@@ -1,5 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
+from fastapi.testclient import TestClient
 from app.routers import tablets
+# from u_tests.products_tests import test_root
+
 
 app = FastAPI(
     
@@ -19,4 +22,16 @@ app = FastAPI(
     },
 )
 
+routerRoot = APIRouter()
+
+@routerRoot.get("/")
+def root():
+    return {"message" : "Go to the url http://127.0.0.1:8000/docs to apply some requests"}
+    
 app.include_router(tablets.router)
+app.include_router(routerRoot)
+
+# client = TestClient(app)
+
+# test_root(client)
+

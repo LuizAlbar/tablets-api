@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends, Query, status
 from app.db.database import get_db
 from app.crud.tablets import TabletCrud
 from sqlalchemy.orm import Session
-from app.schemas.tablets import TabletCreate, TabletUpdate, TabletGet, TabletsGet, TabletDeletedGet
+from app.schemas.tablets import TabletCreate, TabletUpdate, TabletGet, TabletsGet, TabletDeletedGet, TabletBase
 
 router =  APIRouter(tags= ['Tablets'], prefix= "/tablets")
 
-@router.get("/tablets", status_code=status.HTTP_200_OK, response_model= TabletsGet)
+@router.get("/", status_code=status.HTTP_200_OK, response_model= TabletsGet)
 def get_all_tablets(
     db: Session = Depends(get_db),
     page: int = Query(1, ge= 1, description= "Page number"),
@@ -44,3 +44,8 @@ def delete_tablet(
     tablet_id : int,
     db : Session = Depends(get_db)):
     return TabletCrud.delete_tablet(db, tablet_id)
+
+@router.get("/simulator-tablets/", response_model=TabletsGet)
+def get_simulated_tablets(db: Session = Depends(get_db)):
+    tablets = db.query(TabletGet).all()
+    return {"message": "Success", "data": tablets}

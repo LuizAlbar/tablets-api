@@ -3,6 +3,7 @@ from app.crud.tablets import TabletCrud
 from sqlalchemy.orm import sessionmaker
 from app.core.settings import settings
 from app.models.tablet import Tablet
+from app.db.base import Base
 
 engine = create_engine(settings.DATABASE_URL, connect_args= {"check_same_thread" : False})
 
@@ -37,3 +38,6 @@ def delete_item(id):
     finally:
         db.close()
     
+def drop_all():
+    
+  Base.metadata.drop_all(engine)

@@ -1,7 +1,7 @@
 from app.db.database import engine
 from app.models.tablet import Tablet
 from app.db.base import Base
-from app.db.database import create_item, delete_item
+from app.db.database import create_item, delete_item, drop_all
 from app.scraper.product_scraper import listOfTablets, get_product
 from app.schemas.tablets import TabletCreate
 from app.crud.tablets import TabletCrud
@@ -25,7 +25,11 @@ for index, tablet in enumerate(listOfTablets):
     newTablet = TabletCreate(name= name, description= description, price= price, link= link)
     
     #Tablets already added into the database
-    # create_item(newTablet)
+    create_item(newTablet)
+    
+    
+
+
 
 
 
