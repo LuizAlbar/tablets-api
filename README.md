@@ -140,7 +140,7 @@ curl -X POST "http://127.0.0.1:8000/tablets/" \
 
 │   └── main.py           # Configuração do FastAPI
 
-├── tests/                # Testes automatizados
+├── u_tests/                # Testes unitários
 
 ├── requirements.txt      # Dependências
 
