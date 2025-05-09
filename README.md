@@ -1,4 +1,3 @@
-```markdown
 
 
 # API de E-commerce para Tablets
@@ -132,4 +131,3 @@ curl -X POST "http://127.0.0.1:8000/tablets/" \
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-```
