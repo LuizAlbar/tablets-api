@@ -40,17 +40,37 @@ pip install -r requirements.txt
 
 `beautifulsoup4`, `requests`, `sqlalchemy`, `fastapi`, `uvicorn`, `pydantic`, `pydantic-settings`, `httpx`
 
-3. **Configuração do Banco de Dados**:
+3. **Configuração do Banco de Dados**
 
-- Certifique-se de que o MySQL está rodando localmente.
+O projeto oferece suporte tanto ao **MySQL** quanto ao **SQLite**.
 
-- Atualize a `DATABASE_URL` no arquivo `.env` (crie o arquivo se não existir):
+### Usando MySQL
+
+1. Certifique-se de que o MySQL está rodando localmente.
+2. Crie um arquivo `.env` na raiz do projeto (se ainda não existir).
+3. Adicione a variável `DATABASE_URL`:
 
 ```env
-
-DATABASE_URL=mysql+pymysql://root:root@localhost:3306/products
-
+DATABASE_URL=mysql+pymysql://user:passwordt@localhost:3306/products
 ```
+
+> Altere `user:password` e `products` conforme sua configuração local.
+
+### Usando SQLite (modo mais simples para testes)
+
+Se preferir não configurar o MySQL, você pode usar o banco de dados SQLite incluído no projeto.
+
+1. O arquivo `store.db` já está presente na raiz do projeto.
+2. Para usá-lo, defina a variável `DATABASE_URL` assim:
+
+```env
+DATABASE_URL=sqlite:///./store.db
+```
+
+> Não é necessário instalar ou configurar nenhum servidor de banco de dados para usar o SQLite.
+
+---
+
 
 ## Uso
 
