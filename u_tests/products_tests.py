@@ -35,7 +35,7 @@ def test_get_tablets_simulator(client):
     assert response.status_code == 200
 
     expected = [tablet.model_dump() for tablet in db_simulator]
-    response_data = response.json()["data"]  # acessa o campo correto
+    response_data = response.json()["data"]  
 
     assert response_data == expected
     print("Status 200: OK")

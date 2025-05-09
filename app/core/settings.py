@@ -2,9 +2,7 @@ from pydantic_settings import BaseSettings
 
 class Setting(BaseSettings):
     
-    DATABASE_URL : str = 'sqlite:///./store.db'
+    DATABASE_URL: str = "mysql+pymysql://user:password@localhost:3306/products"
+
     
-    class Config:
-        env_file = '.env'
-        
 settings = Setting()
