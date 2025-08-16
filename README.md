@@ -22,9 +22,9 @@ Uma API baseada em FastAPI para gerenciar produtos de tablets. Este projeto incl
 
 ```bash
 
-git clone https://github.com/LuizAlbar/TabletsAPI.git
+git clone https://github.com/LuizAlbar/tablets-api.git
 
-cd TabletsAPI
+cd tablets-api
 
 ```
 
