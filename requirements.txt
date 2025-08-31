@@ -1,11 +1,11 @@
--beautifulsoup4 
--requests
--sqlalchemy
--fastapi 
--uvicorn
--pydantic
--pydantic_settings
--fastapi.testclient
--httpx
+beautifulsoup4 
+requests
+sqlalchemy
+fastapi 
+uvicorn
+pydantic
+pydantic_settings
+fastapi.testclient
+httpx
 
 
